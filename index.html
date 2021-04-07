@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/class.css">
+</head>
+<body class="bg-light">
+    <div class="bg-white card">
+        <section class="head bg-yellow">
+            <input type="text" id="nomeDoItem" placeholder="Novo item...">
+            <button class="btn" id="btnAdd" onclick="addNaLista()">Adicionar</button>
+        </section>
+
+        <section class="itens d-flex flex-column center" id="meusItens">
+            <!-- Aqui ficam os itens -->
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

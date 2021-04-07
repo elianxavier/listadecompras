@@ -1,0 +1,153 @@
+.bg-light
+{
+    background-color: #ddd;
+}
+
+.bg-white
+{
+    background-color: white;
+}
+
+.bg-yellow
+{
+    background-color: rgb(255, 253, 114);
+}
+
+.d-flex
+{
+    display: flex;
+}
+
+.flex-column
+{
+    flex-direction: column;
+}
+
+.d-grid
+{
+    display: grid;
+}
+
+.d-block
+{
+    display: block;
+}
+
+.y-center
+{
+    justify-content: center;
+}
+
+.x-center
+{
+    align-items: center;
+}
+
+.center
+{
+    align-items: center;
+    justify-content: center;
+}
+
+.head
+{
+    width: 100%;
+    padding: 30px;
+    display: grid;
+    grid-template: "input btn";
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1), inset 0px 50px 30px rgba(255, 255, 255, 0.1);
+    column-gap: 10px;
+}
+
+.btn
+{
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover
+{
+    box-shadow: inset 0px -20px 20px rgba(0, 0, 0, 0.05), 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active
+{
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card
+{
+    width: 50%;
+    min-height: 300px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.linha
+{
+    width: 90%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label
+{
+    justify-content: start;
+    width: 60%;
+    word-wrap: break-word;
+    margin: 20px 0;
+}
+
+.btnExcluir
+{
+    border: none;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.itens
+{
+    padding: 30px;
+}
+
+@media(max-width: 929px)
+{
+    .card
+    {
+        width: 70%;
+    }
+}
+
+@media(max-width: 689px)
+{
+    .head
+    {
+        grid-template: "input" "btn";
+        row-gap: 10px;
+    }
+}
+
+@media(max-width: 549px)
+{
+    .card
+    {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .head
+    {
+        position: fixed;
+        z-index: 1;
+    }
+
+    .itens
+    {
+        margin-top: 170px;
+    }
+}
