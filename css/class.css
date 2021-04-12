@@ -75,7 +75,7 @@
 
 .btn:active
 {
-    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card
@@ -98,9 +98,15 @@
 .label
 {
     justify-content: start;
-    width: 60%;
+    width: 80%;
     word-wrap: break-word;
-    margin: 20px 0;
+}
+
+.label label
+{
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
 }
 
 .btnExcluir
