@@ -26,6 +26,13 @@ input[type="text"]
     height: 50px;
     padding-left: 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: .5s ease-in-out;
+}
+
+input[type="text"]:focus
+{
+    transform: scale(1.05) translateX(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.17);
 }
 
 input[type="checkbox"]
@@ -55,5 +62,11 @@ ion-icon
     {
         padding: 0;
         align-items: baseline;
+    }
+
+    input[type="text"]:focus
+    {
+        transform: scale(1) translateX(0px);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     }
 }

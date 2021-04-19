@@ -10,15 +10,15 @@ function element(elemento) { return document.querySelector(elemento); }
 //função que mostra a lista na tela
 function render()
 {
+    //seleciona a seção onde vão ficar os itens da lista
+    const meusItens = element("#meusItens");
+
     /* limpa a seção antes de renderizar tudo de volta.
     para que a lista não seja mostrada repetidamente */
-    element("#meusItens").innerHTML = "";
+    meusItens.innerHTML = "";
 
     //percorre a lista passando o conteúdo e o numero da posição do array
     lista.forEach((nomeDoItem, pos) => {
-
-        //seleciona a seção onde vão ficar os itens da lista
-        const meusItens = element("#meusItens");
 
         //cria as tags
         const linha = document.createElement("div");
@@ -27,25 +27,28 @@ function render()
         const label = document.createElement("label");
         const btnExcluir = document.createElement("button");
 
-        //adiciona os atributos da div onde o item vai ficar
-        linha.setAttribute("class", "linha");
-
-        //adiciona os atributos do input checkbox
+        //adiciona os atributos das tags
         check.setAttribute("type", "checkbox");
         check.setAttribute("id", pos);
+
+        linha.setAttribute("class", "linha");
+        linha.setAttribute("id", "linha" + check.id);
+
+        //adiciona um disparador de evento, para quando o usuário clicar, ele alterar o estilo da linha
+        check.addEventListener("change", () => { checked(linha.id, check.checked) });
         
-        //adiciona os atributos da div onde o label vai ficar
         div.setAttribute("class", "label");
 
-        //adiciona os atributos do label
         label.setAttribute("for", check.id);
-        label.innerHTML = nomeDoItem;
+        label.innerHTML = nomeDoItem;//põe o nome do item dentro do label
 
-        //adiciona os atributos do botão de excluir
+        //põe o ícone de excluir no botão de excluir
         btnExcluir.innerHTML = "<ion-icon name='close-outline'></ion-icon>"; //adiciona o ícone de excluir no botão
-        btnExcluir.setAttribute("id", check.id);
-        btnExcluir.setAttribute("onclick", "apagar("+ check.id +")");
+        
         btnExcluir.setAttribute("class", "btnExcluir");
+
+        //adiciona um disparador de evento, para quando o usuário clicar, ele apagar o item
+        btnExcluir.addEventListener("click", () => { apagar(check.id) });
 
         //organiza as tags filhas dentro das devidas tags mães
         linha.appendChild(check);//põe a checkbox dentro da linha
@@ -57,9 +60,19 @@ function render()
     });
 }
 
+//função que vai alterar a linha quando ela for marcada
+function checked(id, state)
+{
+    let linha = element("#"+id);
 
-//mostra a lista logo de cara, para caso tiver algo já adicionado, já ser visualizado
-render();
+    if(state)
+    {
+        linha.setAttribute("class", "linha-checked");
+    } else
+    {
+        linha.setAttribute("class", "linha");
+    }
+}
 
 
 //função que adiciona o item na lista
@@ -108,3 +121,10 @@ function apagar(id)
     //atualiza a seção
     render();
 }
+
+
+//mostra a lista logo de cara, para caso tiver algo já adicionado, já ser visualizado
+render();
+
+//cria um disparador de evento, para quando clicar no botão, ele ativar a função de adicionar na lista
+element("#btnAdd").addEventListener("click", addNaLista);

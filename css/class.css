@@ -66,16 +66,20 @@
     outline: none;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: .3s ease-in-out;
 }
 
 .btn:hover
 {
-    box-shadow: inset 0px -20px 20px rgba(0, 0, 0, 0.05), 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05) translateX(5px);
 }
 
 .btn:active
 {
-    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.07);
+    transform: scale(1);
+    transition: .1s;
 }
 
 .card
@@ -93,6 +97,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: .3s ease-in-out;
+}
+
+.linha-checked
+{
+    width: 90%;
+    box-shadow: 0px 0px 20px -15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s ease-in-out;
+}
+
+.linha:hover
+{
+    animation: breath 3s ease-in-out  infinite;
 }
 
 .label
@@ -114,6 +135,35 @@
     border: none;
     background-color: transparent;
     padding: 20px;
+    outline: none;
+}
+
+@keyframes breath
+{
+    0%
+    {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25%
+    {
+        transform: rotate(.5deg) scale(1.01);
+    }
+
+    50%
+    {
+        transform: rotate(0deg) scale(1);
+    }
+
+    75%
+    {
+        transform: rotate(-.5deg) scale(1.01);
+    }
+
+    100%
+    {
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 .itens
@@ -155,5 +205,17 @@
     .itens
     {
         margin-top: 170px;
+    }
+
+    .btn:hover
+    {
+        transform: scale(1) translateX(0px);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:active
+    {
+        transform: scale(.98);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.0);
     }
 }

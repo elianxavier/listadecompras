@@ -8,12 +8,14 @@
 🟢 tirar a função getNomeDoItem
 🟢 tornar o texto obrigatório
 🟢 comentários no código para melhor entendimento
+🟢 tirar os scripts no html usando listener
 
 ------ atualização de visual ------
 
 🔴 animações
 🔴 checkbox
-🔴 efeito de concluído
+🟢 efeito de item marcado
+🟢 botão de adicionar
 🔴 botão de excluir
 🔴 logo
 
